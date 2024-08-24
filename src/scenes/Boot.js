@@ -1,5 +1,5 @@
 import { Scene } from 'phaser';
-import { Textos } from "../components/textos.js";
+import { Textos } from "../components/Textos.js";
 
 export class Boot extends Scene
 {

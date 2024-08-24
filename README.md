@@ -1,3 +1,10 @@
+# ArkaJon-Phaser
+
+A version of classic arcade arkanoid in JavaScript-Phaser
+
+https://juan1639.github.io/ArkaJonPhaser
+
+
 # Phaser Vite Template
 
 This is a Phaser 3 project template that uses Vite for bundling. It supports hot-reloading for quick development workflow and includes scripts to generate production-ready builds.
