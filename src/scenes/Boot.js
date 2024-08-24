@@ -13,7 +13,7 @@ export class Boot extends Scene
         this.txt = new Textos(this, {
             x: Math.floor(this.sys.game.config.width / 2),
             y: Math.floor(this.sys.game.config.height / 2),
-            txt: ' Touch screen or \n \n click to start... ',
+            txt: ' Touch screen or \n \n  click to start... ',
             size: 60, color: '#ffa', style: 'bold',
             stroke: '#fb1', sizeStroke: 16,
             shadowOsx: 2, shadowOsy: 2, shadowColor: '#111',
@@ -24,7 +24,7 @@ export class Boot extends Scene
 
     preload()
     {
-        this.load.image('fondo', 'assets/img/bg.png');
+        this.load.image('fondo', 'assets/bg.png');
     }
 
     create()
