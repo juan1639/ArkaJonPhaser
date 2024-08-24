@@ -104,6 +104,17 @@ export class Settings
         controles: 800,
         textos: 900
     };
+
+    static sombra =
+    {
+        offSetX: -5,
+        offSetY: 5,
+        decay: 0.06,
+        power: 0.9,
+        color: 0x111111,
+        samples: 2,
+        intensidad: 0.8
+    };
     
     static audio =
     {
