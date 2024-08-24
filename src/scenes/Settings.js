@@ -119,7 +119,8 @@ export class Settings
     static audio =
     {
         numKey: null,
-        key: null
+        key: null,
+        breakoutMusic: null
     };
 
     /* static RECORDS =

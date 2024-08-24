@@ -36,7 +36,7 @@ export class MainMenu extends Scene
 
     create()
     {
-        //this.sonidoMarioTuberias = this.sound.add('mario-tuberias');
+        Settings.audio.breakoutMusic = this.sound.add('breakout-music');
         
         this.add.image(0, 0, 'fondo-arkanoid').setOrigin(0, 0);
 
@@ -65,7 +65,7 @@ export class MainMenu extends Scene
             }
         ]).play();
 
-        //play_sonidos(this.sonidoMarioTuberias, false, 0.7);
+        playSonidos(Settings.audio.breakoutMusic, false, 0.7);
 
         console.log(this.txt);
     }

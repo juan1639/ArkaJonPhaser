@@ -67,6 +67,7 @@ export class Preloader extends Scene
         //  Archivos de audio
         this.load.audio('key', './audio/key.wav');
         this.load.audio('numkey', './audio/numkey.wav');
+        this.load.audio('breakout-music', './audio/breakout-music.mp3');
     }
 
     create ()
