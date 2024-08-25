@@ -74,8 +74,8 @@ export class Settings
     {
         INI_X: Settings.SCREEN.WIDTH / 2,
         INI_Y: Settings.SCREEN.HEIGHT / 1.2,
-        VEL_INI_X: 300,
-        VEL_INI_Y: -300,
+        VEL_INI_X: 600,
+        VEL_INI_Y: -600,
     };
 
     static CAMERA_CONTROLES =
@@ -114,8 +114,8 @@ export class Settings
 
     static sombra =
     {
-        offSetX: -5,
-        offSetY: 5,
+        offSetX: 9,
+        offSetY: 9,
         decay: 0.06,
         power: 0.9,
         color: 0x111111,

@@ -1,4 +1,5 @@
 import { Settings } from "../scenes/Settings";
+import { DataNiveles } from "./DataNiveles";
 
 export class MuroLadrillos
 {
@@ -10,33 +11,41 @@ export class MuroLadrillos
 
     create()
     {
-        this.muro = this.relatedScene.physics.add.group([
+        this.muro = this.relatedScene.physics.add.staticGroup();
+
+        for (let y = 0; y < DataNiveles.nivel_1.length; y ++)
+        {
+            for (let x = 0; x < DataNiveles.nivel_1[0].length; x ++)
             {
-                key: 'ladrillo-plantilla',
-                frame: 0,
-                repeat: 10,
-                setXY: { x: 128, y: 128, stepX: 64 },
-            },
-            {
-                key: 'ladrillo-plantilla',
-                frame: 0,
-                repeat: 10,
-                setXY: { x: 128, y: 160, stepX: 64 },
-            },
-            {
-                key: 'ladrillo-plantilla',
-                frame: 0,
-                repeat: 10,
-                setXY: { x: 128, y: 192, stepX: 64 },
+                const lx = x * Settings.TILE_SIZE.X;
+                const ly = y * Settings.TILE_SIZE.Y;
+                const valor = parseInt(DataNiveles.nivel_1[y][x]);
+                
+                if (valor !== 0)
+                {
+                    this.muro.create(lx, ly, 'ladrillo-plantilla')
+                        .setData('valor', valor).setDepth(Settings.depth.ladrillos);
+
+                    //console.log(lx, ly, valor);
+                }
             }
-        ]);
+        }
 
-        this.muro.children.iterate(ladri => {
-            ladri.setTint(0xffff00);
+        const coloresArray = [
+            0x111111,
+            0xbda300,// irrompible-1
+            0xd0d2d4,// plateado-2
+            0xff4009,// rojo-3
+            0x2ceae6,// azul-claro-4
+            0xf1f120,// amarillo-5
+            0xeeeeee,// blanco-6
+            0x22ee11,// verde-7
+            0xff8807,// naranja-8
+        ];
 
-            const {offSetX, offSetY, decay, power, color, samples, intensidad} = Settings.sombra;
-            //ladri.postFX.addShadow(-5, 5, 0.06, 0.9, 0x111111, 2, 0.8);
-            ladri.postFX.addShadow(offSetX, offSetY, decay, power, color, samples, intensidad);
+        this.muro.children.iterate(ladri =>
+        {
+            ladri.setTint(coloresArray[ladri.getData('valor')]);
         });
 
         /* this.jugador.setCircle(
@@ -50,6 +59,17 @@ export class MuroLadrillos
 
     update()
     {
+        const {offSetX, offSetY, color} = Settings.sombra;
+
+        this.relatedScene.graphics.clear();
+        this.relatedScene.graphics.fillStyle(color, 0.6);
+
+        this.muro.children.iterate(ladri =>
+        {
+            this.relatedScene.graphics.fillRect(
+                ladri.x, ladri.y, ladri.width, ladri.height
+            );
+        });
     }
 
     get()

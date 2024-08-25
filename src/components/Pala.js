@@ -16,6 +16,7 @@ export class Pala
 
         this.pala.setData('vel', vel);
 
+        this.pala.setDepth(Settings.depth.jugador);
         this.pala.setScale(scX, scY).setOrigin(orX, orY);
         this.pala.setX(x).setY(y);
         this.pala.setVelocityX(0).setVelocityY(0);

@@ -16,6 +16,7 @@ export class Game extends Scene
         this.muro = new MuroLadrillos(this, {});
 
         this.pala = new Pala(this, {
+
             x: Settings.jugador.INI_X,
             y: Settings.jugador.INI_Y,
             vel: Settings.jugador.VEL,
@@ -26,6 +27,7 @@ export class Game extends Scene
         });
 
         this.bola = new Bola(this, {
+
             x: Settings.bola.INI_X,
             y: Settings.bola.INI_Y,
             velX: Settings.bola.VEL_INI_X,
@@ -47,7 +49,9 @@ export class Game extends Scene
         this.physics.world.setBoundsCollision(true, true, true, true);
 
         //this.cameras.main.setBackgroundColor(0x00ff00);
-        this.add.image(0, 0, 'fondo-arkanoid').setOrigin(0, 0);
+        this.add.image(0, 0, 'fondo-arkanoid').setOrigin(0, 0).setDepth(Settings.depth.fondo);
+
+        this.graphics = this.add.graphics();
 
         if (Settings.audio.breakoutMusic.isPlaying)
         {
@@ -62,5 +66,13 @@ export class Game extends Scene
 
             this.scene.start('GameOver');
         }); */
+    }
+
+    update()
+    {
+        this.graphics.clear();
+        
+        this.muro.update();
+        this.bola.update();
     }
 }
