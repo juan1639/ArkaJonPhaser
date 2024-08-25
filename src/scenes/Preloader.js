@@ -50,24 +50,26 @@ export class Preloader extends Scene
     {
         this.load.setPath('assets');
 
-        this.load.image('fondo', './img/bg.png');
+        this.load.image('fondo', '/img/bg.png');
         this.load.image('fondo-arkanoid', '/img/fondo-arkanoid-1024x768.png');
         this.load.image('tile-fondo-arkanoid', '/img/bg-arkanoid-tile.png');
 
-        this.load.image('boton-new-game', './img/ui-newgame.png');
-        this.load.image('boton-ui-1', './img/ui-1.png');
-        this.load.spritesheet('boton-fullscreen', './img/boton-fullscreen.png', {frameWidth: 64, frameHeight: 64});
-        this.load.spritesheet('radio-buttons', './img/radio-buttons-ssheet.png', {frameWidth: 50, frameHeight: 50});
+        this.load.image('boton-new-game', '/img/ui-newgame.png');
+        this.load.image('boton-ui-1', '/img/ui-1.png');
+        this.load.spritesheet('boton-fullscreen', '/img/boton-fullscreen.png', {frameWidth: 64, frameHeight: 64});
+        this.load.spritesheet('radio-buttons', '/img/radio-buttons-ssheet.png', {frameWidth: 50, frameHeight: 50});
 
-        this.load.image('particula1', './img/particula1.png');
-        this.load.image('cruceta-controles', './img/cruceta-up.png');
+        this.load.image('particula1', '/img/particula1.png');
+        this.load.image('cruceta-controles', '/img/cruceta-up.png');
 
         this.load.image('ladrillo-plantilla', '/img/ladrillo-plantilla.png');
+        this.load.image('pala', '/img/pala.png');
+        this.load.image('bola', '/img/bola.png');
 
         //  Archivos de audio
-        this.load.audio('key', './audio/key.wav');
-        this.load.audio('numkey', './audio/numkey.wav');
-        this.load.audio('breakout-music', './audio/breakout-music.mp3');
+        this.load.audio('key', '/audio/key.wav');
+        this.load.audio('numkey', '/audio/numkey.wav');
+        this.load.audio('breakout-music', '/audio/breakout-music.mp3');
     }
 
     create ()

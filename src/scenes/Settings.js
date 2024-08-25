@@ -66,9 +66,16 @@ export class Settings
     static jugador =
     {
         INI_X: Settings.SCREEN.WIDTH / 2,
-        INI_y: Settings.SCREEN.HEIGHT / 1.2,
-        VEL_INI: 100,
-        invisible: false,
+        INI_Y: Settings.SCREEN.HEIGHT / 1.1,
+        VEL: 250,
+    };
+
+    static bola =
+    {
+        INI_X: Settings.SCREEN.WIDTH / 2,
+        INI_Y: Settings.SCREEN.HEIGHT / 1.2,
+        VEL_INI_X: 300,
+        VEL_INI_Y: -300,
     };
 
     static CAMERA_CONTROLES =
